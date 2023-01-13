@@ -1,11 +1,34 @@
 <template>
-  <h1>Practica con pinia gestión del estado</h1>
+  <aside>
+    <TodoForm />
+  </aside>
+
+  <section>
+    <TodoList />
+  </section>
 </template>
 
-<script>
-export default {
-  name: "App",
-};
+<script lang="ts">
+import TodoForm from "./components/TodoForm.vue";
+import TodoList from "./components/TodoList.vue";
+import { defineComponent } from "vue";
+export default defineComponent({
+  name: "app",
+  components: {
+    TodoForm,
+    TodoList,
+  },
+});
 </script>
 
-<style></style>
+<style scoped>
+aside {
+  margin-top: 32px !important;
+}
+
+aside,
+section {
+  width: 80%;
+  margin: auto;
+}
+</style>
